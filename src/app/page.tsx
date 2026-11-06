@@ -21,7 +21,7 @@ export default function HomePage() {
             <div className="mb-6 inline-flex rounded-full bg-sand px-4 py-2 text-sm font-semibold">✦ Your next favorite corner of the internet</div>
             <h1 className="max-w-xl text-5xl font-black leading-[1.05] tracking-[-0.065em] sm:text-7xl">Find your people.<br /><span className="text-coral">Build your universe.</span></h1>
             <p className="mt-7 max-w-lg text-lg leading-8 text-muted">A creative social space for discovering ideas, sharing what you love, and finding communities that feel like yours.</p>
-            <div className="mt-9 flex flex-wrap items-center gap-3"><span className="rounded-2xl bg-ink px-6 py-4 font-bold text-white">A new world is coming</span><span className="text-sm text-muted">We are building ORBIT, one thoughtful step at a time.</span></div>
+            <div className="mt-9 flex flex-wrap items-center gap-3"><Link href="/app" className="inline-flex min-h-12 items-center rounded-2xl bg-ink px-6 py-4 font-bold text-white transition-colors hover:bg-ink/90">Enter ORBIT preview →</Link><span className="text-sm text-muted">We are building ORBIT, one thoughtful step at a time.</span></div>
           </div>
           <div aria-hidden="true" className="relative flex min-h-80 items-center justify-center overflow-hidden rounded-[3rem] bg-sand sm:min-h-[440px]">
             <div className="orbit-float absolute h-72 w-72 rounded-full border-[36px] border-lavender sm:h-96 sm:w-96" />
