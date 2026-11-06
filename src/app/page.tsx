@@ -1,3 +1,5 @@
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
 import Link from "next/link";
 
 const pillars = [
@@ -12,7 +14,7 @@ export default function HomePage() {
       <div className="mx-auto max-w-6xl">
         <header className="flex items-center justify-between gap-4 border-b border-ink/10 pb-5">
           <Link href="/" aria-label="ORBIT home" className="text-2xl font-black tracking-[-0.08em]">ORBIT<span className="text-coral">.</span></Link>
-          <span className="rounded-full bg-surface px-4 py-2 text-xs font-semibold shadow-sm sm:text-sm">Phase 1B · Design system</span>
+          <Badge tone="lavender">Phase 1C · UI components</Badge>
         </header>
         <section className="grid items-center gap-10 py-20 lg:grid-cols-2 lg:py-28">
           <div>
@@ -28,7 +30,7 @@ export default function HomePage() {
             <div className="absolute translate-x-28 translate-y-32 rotate-[-12deg] rounded-2xl bg-surface px-6 py-4 text-xl font-black shadow-xl">Your orbit ✦</div>
           </div>
         </section>
-        <section aria-label="What ORBIT will offer" className="grid gap-5 pb-20 md:grid-cols-3">{pillars.map((pillar) => <article key={pillar.title} className="rounded-[2rem] border border-ink/5 bg-surface p-8 shadow-sm"><div className="mb-7 text-4xl text-coral">{pillar.icon}</div><h2 className="text-2xl font-extrabold tracking-tight">{pillar.title}</h2><p className="mt-3 leading-7 text-muted">{pillar.text}</p></article>)}</section>
+        <section aria-label="What ORBIT will offer" className="grid gap-5 pb-20 md:grid-cols-3">{pillars.map((pillar) => <Card key={pillar.title}><div className="mb-7 text-4xl text-coral">{pillar.icon}</div><h2 className="text-2xl font-extrabold tracking-tight">{pillar.title}</h2><p className="mt-3 leading-7 text-muted">{pillar.text}</p></Card>)}</section>
         <footer className="border-t border-ink/10 py-6 text-sm text-muted">© {new Date().getFullYear()} ORBIT · Made for communities.</footer>
       </div>
     </main>
