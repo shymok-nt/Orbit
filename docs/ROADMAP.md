@@ -1,0 +1,24 @@
+# ORBIT Roadmap
+
+## Phase 1 — Frontend foundation and prototype
+
+- [x] 1A: Repository bootstrap, Next.js, strict TypeScript, design foundation and starter page (pending local verification)
+- [ ] 1B: Design tokens, typography, spacing, accessibility and responsive rules
+- [ ] 1C: Reusable UI components and component tests
+- [ ] 1D: Desktop and mobile application shell
+- [ ] 1E: Typed mock entities and fixtures
+- [ ] 1F: Home, Explore, Worlds, Notifications and Profile screens
+- [ ] 1G: Prototype interactions and feedback states
+- [ ] 1H: Automated quality gates and documentation review
+
+## Future phases
+
+2. Authentication and account lifecycle
+3. Worlds and community membership
+4. Posts, media, reactions and comments
+5. Search, discovery and feeds
+6. Messaging and notifications
+7. Moderation, abuse prevention and administration
+8. Performance, security review and production readiness
+
+Each phase requires review, local validation and user approval before the next major phase. Line counts are not a success metric.
