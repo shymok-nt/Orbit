@@ -4,16 +4,15 @@ import { Avatar } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 
-const previewPosts = [
-  { author: "Maya Chen", handle: "@mayamakes", world: "Design Club", initials: "MC", time: "2h", text: "A little reminder to make things just for the joy of making them. What's inspiring you lately?", likes: "128", comments: "24", accent: "bg-lavender/25" },
-  { author: "Leo Rivera", handle: "@leocreates", world: "Slow Sundays", initials: "LR", time: "5h", text: "Today's mood: fresh coffee, a good playlist, and finally finishing that side project. ☀️", likes: "86", comments: "12", accent: "bg-coral/15" },
-] as const;
+import { getDemoFeed, getFeaturedWorlds } from "@/features/social/selectors";
 
-const featuredWorlds = [
-  { name: "Design Club", description: "Make, share, inspire.", icon: "✳", color: "bg-lavender/25" },
-  { name: "Slow Sundays", description: "Find joy in little things.", icon: "☀", color: "bg-coral/15" },
-  { name: "Creative Coding", description: "Ideas meet technology.", icon: "⌘", color: "bg-sand" },
-] as const;
+const previewPosts = getDemoFeed();
+const featuredWorlds = getFeaturedWorlds();
+const accentClasses = {
+  lavender: "bg-lavender/25",
+  coral: "bg-coral/15",
+  sand: "bg-sand",
+} as const;
 
 export default function DashboardPage() {
   return (
@@ -54,21 +53,21 @@ export default function DashboardPage() {
               <span className="text-xs font-semibold text-muted">Sample posts</span>
             </div>
             {previewPosts.map((post) => (
-              <Card key={post.handle} className="space-y-5">
+              <Card key={post.post.id} className="space-y-5">
                 <div className="flex items-center gap-3">
-                  <Avatar name={post.author} />
+                  <Avatar name={post.author.displayName} />
                   <div className="min-w-0 flex-1">
-                    <p className="font-bold">{post.author} <span className="font-normal text-muted">{post.handle}</span></p>
-                    <p className="text-xs text-muted">{post.world} · {post.time}</p>
+                    <p className="font-bold">{post.author.displayName} <span className="font-normal text-muted">{`@${post.author.handle}`}</span></p>
+                    <p className="text-xs text-muted">{post.world.name} · {new Date(post.post.createdAt).toLocaleDateString("en-US", { month: "short", day: "numeric" })}</p>
                   </div>
                 </div>
-                <p className="text-[15px] leading-7">{post.text}</p>
-                <div aria-hidden="true" className={`flex h-36 items-center justify-center rounded-2xl ${post.accent}`}>
+                <p className="text-[15px] leading-7">{post.post.body}</p>
+                <div aria-hidden="true" className={`flex h-36 items-center justify-center rounded-2xl ${accentClasses[post.post.visual]}`}>
                   <span className="text-5xl font-black tracking-[-0.08em] text-ink/50">ORBIT ✳</span>
                 </div>
                 <div className="flex gap-6 border-t border-ink/10 pt-4 text-sm text-muted" aria-label="Sample engagement counts">
-                  <span className="inline-flex items-center gap-2"><Heart size={18} aria-hidden="true" /> {post.likes}</span>
-                  <span className="inline-flex items-center gap-2"><MessageCircle size={18} aria-hidden="true" /> {post.comments}</span>
+                  <span className="inline-flex items-center gap-2"><Heart size={18} aria-hidden="true" /> {post.post.likeCount}</span>
+                  <span className="inline-flex items-center gap-2"><MessageCircle size={18} aria-hidden="true" /> {post.post.commentCount}</span>
                 </div>
               </Card>
             ))}
@@ -80,7 +79,7 @@ export default function DashboardPage() {
             <div className="flex items-center gap-2"><Orbit size={20} className="text-coral" aria-hidden="true" /><h2 className="text-lg font-extrabold">Worlds to explore</h2></div>
             {featuredWorlds.map((world) => (
               <div key={world.name} className="flex items-center gap-3">
-                <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl text-xl ${world.color}`}>{world.icon}</div>
+                <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl text-xl ${accentClasses[world.accent]}`}>{world.symbol}</div>
                 <div className="min-w-0"><p className="font-bold">{world.name}</p><p className="text-xs text-muted">{world.description}</p></div>
               </div>
             ))}
