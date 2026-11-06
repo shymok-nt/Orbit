@@ -1,0 +1,23 @@
+:root {
+  color-scheme: light;
+  --orbit-cream: #fff9f3;
+  --orbit-coral: #ff6b57;
+  --orbit-lavender: #a78bfa;
+  --orbit-lavender-soft: #e9ddff;
+  --orbit-ink: #25212b;
+  --orbit-sand: #f2e9e2;
+  --orbit-surface: #ffffff;
+  --orbit-muted: #635c68;
+  --orbit-focus: #7853d5;
+  --orbit-space-1: 0.25rem;
+  --orbit-space-2: 0.5rem;
+  --orbit-space-3: 0.75rem;
+  --orbit-space-4: 1rem;
+  --orbit-space-6: 1.5rem;
+  --orbit-space-8: 2rem;
+  --orbit-space-12: 3rem;
+  --orbit-radius-sm: 0.75rem;
+  --orbit-radius-md: 1.25rem;
+  --orbit-radius-lg: 2rem;
+  --orbit-shadow-card: 0 10px 35px rgb(37 33 43 / 6%);
+}
