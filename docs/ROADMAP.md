@@ -2,8 +2,8 @@
 
 ## Phase 1 — Frontend foundation and prototype
 
-- [x] 1A: Repository bootstrap, Next.js, strict TypeScript, design foundation and starter page (pending local verification)
-- [ ] 1B: Design tokens, typography, spacing, accessibility and responsive rules
+- [x] 1A: Repository bootstrap, Next.js, strict TypeScript, design foundation and starter page (local checks reported successful)
+- [x] 1B: Centralized design tokens, typography, spacing, accessibility and responsive rules (pending local verification)
 - [ ] 1C: Reusable UI components and component tests
 - [ ] 1D: Desktop and mobile application shell
 - [ ] 1E: Typed mock entities and fixtures
