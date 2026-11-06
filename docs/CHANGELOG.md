@@ -1,3 +1,11 @@
+# Unreleased — Phase 1D
+
+- Added responsive application shell, desktop sidebar, top bar and mobile bottom navigation.
+- Added five routed app preview pages with clear placeholder messaging.
+- Preserved public landing page and linked it to the app preview.
+- Added accessibility-aware navigation and application shell documentation.
+- Full testing deferred at user's request.
+
 # Changelog
 
 ## Unreleased — Phase 1B
