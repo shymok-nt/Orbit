@@ -6,6 +6,7 @@
 - [x] 1B: Centralized design tokens, typography, spacing, accessibility and responsive rules (pending local verification)
 - [x] 1C: Reusable UI component foundations (tests deferred until final quality phase at user request)
 - [x] 1D: Desktop and mobile application shell (implementation complete; tests deferred)
+- [x] 1D.1: UI refinement and sample social dashboard (implementation complete; tests deferred)
 - [ ] 1E: Typed mock entities and fixtures
 - [ ] 1F: Home, Explore, Worlds, Notifications and Profile screens
 - [ ] 1G: Prototype interactions and feedback states
