@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import Link from "next/link";
 import { ArrowRight, LockKeyhole, Mail, UserRound } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
@@ -25,7 +24,7 @@ export function AuthPanel() {
   return (
     <section aria-label="Join ORBIT" className="flex min-h-screen items-center justify-center bg-surface px-6 py-12 sm:px-10 lg:px-12">
       <div className="w-full max-w-[420px]">
-        <Link href="/" className="mb-10 inline-block text-2xl font-black tracking-[-0.09em] lg:hidden">ORBIT<span className="text-coral">.</span></Link>
+        <p className="mb-10 text-2xl font-black tracking-[-0.09em] lg:hidden">ORBIT<span className="text-coral">.</span></p>
         <div className="mb-8">
           <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-coral">Welcome to your universe</p>
           <h2 className="mt-3 text-3xl font-black tracking-[-0.055em] sm:text-4xl">{mode === "signup" ? "Create your orbit." : "Welcome back."}</h2>
@@ -48,10 +47,6 @@ export function AuthPanel() {
 
         {notice ? <p role="status" className="mt-4 rounded-xl bg-lavender/20 p-4 text-sm leading-6 text-ink">This is a design preview. Account creation and sign-in are not connected yet. No information was submitted.</p> : null}
         <p className="mt-6 text-center text-xs leading-6 text-muted">Account access is a visual preview. Please do not enter real passwords yet.</p>
-        <div className="mt-8 border-t border-ink/10 pt-6 text-center">
-          <p className="text-sm text-muted">Want to look around first?</p>
-          <Link href="/app" className="mt-2 inline-flex min-h-11 items-center gap-2 text-sm font-bold text-ink hover:underline">Explore the demo <ArrowRight size={16} aria-hidden="true" /></Link>
-        </div>
       </div>
     </section>
   );
