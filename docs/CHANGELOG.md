@@ -1,4 +1,11 @@
-# Unreleased — Phase 1D
+# Unreleased — Phase 1D.1 UI Refinement
+
+- Fixed global anchor styling overriding Tailwind text colors, including the landing CTA.
+- Refined application shell spacing and desktop navigation styling.
+- Replaced sparse dashboard placeholder with a structured sample feed, discovery rail and clearly labeled nonfunctional demo content.
+- Visual and automated verification remain pending.
+
+## Phase 1D
 
 - Added responsive application shell, desktop sidebar, top bar and mobile bottom navigation.
 - Added five routed app preview pages with clear placeholder messaging.
