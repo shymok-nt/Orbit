@@ -1,38 +1,43 @@
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
 import Link from "next/link";
-
-const pillars = [
-  { icon: "✦", title: "Discover", text: "Find ideas, creators, and corners of the internet worth exploring." },
-  { icon: "◎", title: "Worlds", text: "Join communities built around the things you care about." },
-  { icon: "↗", title: "Connect", text: "Share your perspective and meet your people." },
-] as const;
+import { ArrowUpRight, Compass, Orbit, Sparkles } from "lucide-react";
+import { AuthPanel } from "@/components/auth/auth-panel";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen px-5 py-6 sm:px-10 lg:px-16">
-      <div className="mx-auto max-w-6xl">
-        <header className="flex items-center justify-between gap-4 border-b border-ink/10 pb-5">
-          <Link href="/" aria-label="ORBIT home" className="text-2xl font-black tracking-[-0.08em]">ORBIT<span className="text-coral">.</span></Link>
-          <Badge tone="lavender">ORBIT · Early preview</Badge>
+    <main className="grid min-h-screen lg:grid-cols-[minmax(0,1.08fr)_minmax(420px,0.92fr)]">
+      <section className="relative flex min-h-[520px] flex-col overflow-hidden bg-cream px-6 py-8 sm:px-12 sm:py-10 lg:min-h-screen lg:px-14 xl:px-20">
+        <div className="pointer-events-none absolute -right-36 top-28 h-96 w-96 rounded-full border-[60px] border-lavender/25" aria-hidden="true" />
+        <div className="pointer-events-none absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-coral/10" aria-hidden="true" />
+        <header className="relative flex items-center justify-between gap-4">
+          <Link href="/" aria-label="ORBIT home" className="text-3xl font-black tracking-[-0.09em]">ORBIT<span className="text-coral">.</span></Link>
+          <span className="rounded-full border border-ink/10 bg-white/80 px-4 py-2 text-xs font-bold">✦ A space to belong</span>
         </header>
-        <section className="grid items-center gap-10 py-20 lg:grid-cols-2 lg:py-28">
-          <div>
-            <div className="mb-6 inline-flex rounded-full bg-sand px-4 py-2 text-sm font-semibold">✦ Your next favorite corner of the internet</div>
-            <h1 className="max-w-xl text-5xl font-black leading-[1.05] tracking-[-0.065em] sm:text-7xl">Find your people.<br /><span className="text-coral">Build your universe.</span></h1>
-            <p className="mt-7 max-w-lg text-lg leading-8 text-muted">A creative social space for discovering ideas, sharing what you love, and finding communities that feel like yours.</p>
-            <div className="mt-9 flex flex-wrap items-center gap-3"><Link href="/app" className="inline-flex min-h-12 items-center gap-2 rounded-2xl bg-ink px-6 py-4 font-bold !text-white shadow-lg shadow-ink/10 transition-colors hover:bg-ink/90">Enter ORBIT preview →</Link><span className="text-sm text-muted">We are building ORBIT, one thoughtful step at a time.</span></div>
+
+        <div className="relative mx-auto flex w-full max-w-2xl flex-1 flex-col justify-center py-14 lg:py-20">
+          <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full bg-sand px-4 py-2 text-xs font-bold sm:text-sm"><Sparkles size={16} className="text-coral" aria-hidden="true" /> Your next favorite corner of the internet</div>
+          <h1 className="text-5xl font-black leading-[1.03] tracking-[-0.07em] sm:text-6xl xl:text-7xl">Find your people.<br /><span className="text-coral">Build your universe.</span></h1>
+          <p className="mt-6 max-w-lg text-base leading-8 text-muted sm:text-lg">A creative social space to discover ideas, share what you love, and find communities that feel like yours.</p>
+
+          <div aria-hidden="true" className="relative mt-10 flex h-52 w-full max-w-lg items-center justify-center overflow-hidden rounded-[2.5rem] bg-sand/80 sm:h-64">
+            <div className="orbit-float absolute h-56 w-56 rounded-full border-[26px] border-lavender sm:h-64 sm:w-64" />
+            <div className="absolute h-32 w-32 translate-x-12 -translate-y-5 rounded-full bg-coral shadow-xl sm:h-40 sm:w-40" />
+            <div className="absolute h-20 w-20 -translate-x-24 translate-y-12 rounded-full bg-ink sm:h-24 sm:w-24" />
+            <div className="absolute translate-x-24 translate-y-20 -rotate-12 rounded-xl bg-white px-4 py-3 text-sm font-black shadow-lg sm:text-base">Your orbit ✦</div>
           </div>
-          <div aria-hidden="true" className="relative flex min-h-80 items-center justify-center overflow-hidden rounded-[3rem] bg-sand sm:min-h-[440px]">
-            <div className="orbit-float absolute h-72 w-72 rounded-full border-[36px] border-lavender sm:h-96 sm:w-96" />
-            <div className="absolute h-44 w-44 translate-x-12 -translate-y-10 rounded-full bg-coral shadow-2xl sm:h-56 sm:w-56" />
-            <div className="absolute h-28 w-28 -translate-x-28 translate-y-20 rounded-full bg-ink sm:h-36 sm:w-36" />
-            <div className="absolute translate-x-28 translate-y-32 rotate-[-12deg] rounded-2xl bg-surface px-6 py-4 text-xl font-black shadow-xl">Your orbit ✦</div>
+
+          <div className="mt-8 flex flex-wrap gap-4 text-sm font-bold text-ink">
+            <span className="inline-flex items-center gap-2"><Compass size={17} className="text-coral" aria-hidden="true" /> Discover ideas</span>
+            <span className="inline-flex items-center gap-2"><Orbit size={17} className="text-lavender" aria-hidden="true" /> Find your Worlds</span>
+            <span className="inline-flex items-center gap-2"><Sparkles size={17} className="text-coral" aria-hidden="true" /> Create together</span>
           </div>
-        </section>
-        <section aria-label="What ORBIT will offer" className="grid gap-5 pb-20 md:grid-cols-3">{pillars.map((pillar) => <Card key={pillar.title}><div className="mb-7 text-4xl text-coral">{pillar.icon}</div><h2 className="text-2xl font-extrabold tracking-tight">{pillar.title}</h2><p className="mt-3 leading-7 text-muted">{pillar.text}</p></Card>)}</section>
-        <footer className="border-t border-ink/10 py-6 text-sm text-muted">© {new Date().getFullYear()} ORBIT · Made for communities.</footer>
-      </div>
+        </div>
+
+        <footer className="relative flex flex-wrap items-center justify-between gap-3 border-t border-ink/10 pt-5 text-xs text-muted">
+          <span>© {new Date().getFullYear()} ORBIT. Made for communities.</span>
+          <Link href="/app" className="inline-flex items-center gap-1 font-bold text-ink hover:underline">View demo <ArrowUpRight size={14} aria-hidden="true" /></Link>
+        </footer>
+      </section>
+      <AuthPanel />
     </main>
   );
 }
