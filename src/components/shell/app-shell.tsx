@@ -18,11 +18,11 @@ export function AppShell({ children }: AppShellProps) {
   return (
     <div className="min-h-screen bg-cream text-ink">
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-xl focus:bg-white focus:p-3">Skip to content</a>
-      <div className="mx-auto flex min-h-screen max-w-[1600px]">
-        <aside className="sticky top-0 hidden h-screen w-64 shrink-0 flex-col border-r border-ink/10 bg-surface/70 px-5 py-7 md:flex xl:w-72" aria-label="Main navigation">
+      <div className="mx-auto flex min-h-screen max-w-[1680px]">
+        <aside className="sticky top-0 hidden h-screen w-64 shrink-0 flex-col border-r border-ink/10 bg-surface px-5 py-7 md:flex xl:w-72" aria-label="Main navigation">
           <Link href="/" className="px-3 text-3xl font-black tracking-[-0.09em]" aria-label="ORBIT landing page">ORBIT<span className="text-coral">.</span></Link>
           <p className="mt-2 px-3 text-xs text-muted">Find your people.</p>
-          <nav aria-label="Primary" className="mt-12 flex flex-col gap-2">
+          <nav aria-label="Primary" className="mt-10 flex flex-col gap-2">
             {navigation.map(({ href, label, icon: Icon }) => {
               const active = pathname === href;
               return <Link key={href} href={href} aria-current={active ? "page" : undefined} className={cn("flex min-h-12 items-center gap-4 rounded-2xl px-4 font-semibold transition-colors hover:bg-sand", active ? "bg-lavender/20 text-ink" : "text-muted")}>
@@ -31,7 +31,7 @@ export function AppShell({ children }: AppShellProps) {
               </Link>;
             })}
           </nav>
-          <div className="mt-auto rounded-[1.75rem] bg-sand p-5">
+          <div className="mt-auto rounded-[1.75rem] border border-ink/5 bg-sand p-5">
             <Sparkles className="mb-3 text-coral" aria-hidden="true" />
             <p className="font-extrabold">Your universe starts here.</p>
             <p className="mt-2 text-sm leading-6 text-muted">A little more ORBIT, every day.</p>
@@ -52,7 +52,7 @@ export function AppShell({ children }: AppShellProps) {
             </div>
           </header>
 
-          <main id="main-content" className="mx-auto w-full max-w-5xl px-5 pb-28 pt-8 sm:px-8 md:pb-12 md:pt-10">{children}</main>
+          <main id="main-content" className="mx-auto w-full max-w-6xl px-5 pb-28 pt-8 sm:px-8 md:pb-12 md:pt-10">{children}</main>
           <footer className="hidden border-t border-ink/10 px-8 py-5 text-xs text-muted md:block">ORBIT · Preview experience <ArrowUpRight size={12} className="inline" aria-hidden="true" /></footer>
         </div>
       </div>
