@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Compass, Orbit, Sparkles } from "lucide-react";
+import { Compass, Orbit, Sparkles } from "lucide-react";
 import { AuthPanel } from "@/components/auth/auth-panel";
 
 export default function HomePage() {
@@ -34,7 +34,6 @@ export default function HomePage() {
 
         <footer className="relative flex flex-wrap items-center justify-between gap-3 border-t border-ink/10 pt-5 text-xs text-muted">
           <span>© {new Date().getFullYear()} ORBIT. Made for communities.</span>
-          <Link href="/app" className="inline-flex items-center gap-1 font-bold text-ink hover:underline">View demo <ArrowUpRight size={14} aria-hidden="true" /></Link>
         </footer>
       </section>
       <AuthPanel />
