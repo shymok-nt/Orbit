@@ -4,7 +4,7 @@
 
 - [x] 1A: Repository bootstrap, Next.js, strict TypeScript, design foundation and starter page (local checks reported successful)
 - [x] 1B: Centralized design tokens, typography, spacing, accessibility and responsive rules (pending local verification)
-- [ ] 1C: Reusable UI components and component tests
+- [x] 1C: Reusable UI component foundations (tests deferred until final quality phase at user request)
 - [ ] 1D: Desktop and mobile application shell
 - [ ] 1E: Typed mock entities and fixtures
 - [ ] 1F: Home, Explore, Worlds, Notifications and Profile screens
