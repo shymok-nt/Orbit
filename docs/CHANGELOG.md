@@ -1,4 +1,11 @@
-# Unreleased — Phase 1D.1 UI Refinement
+# Unreleased — Phase 1E Typed Mock Data
+
+- Added typed user, world, post and notification domain contracts.
+- Added deterministic fixtures, read-only demo repository and feed selectors.
+- Migrated dashboard sample posts and featured Worlds to the shared data module.
+- Added data model documentation; automated checks remain deferred.
+
+## Phase 1D.1 UI Refinement
 
 - Fixed global anchor styling overriding Tailwind text colors, including the landing CTA.
 - Refined application shell spacing and desktop navigation styling.
