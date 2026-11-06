@@ -1,3 +1,10 @@
+# Unreleased — Split Landing and Auth UI
+
+- Replaced public landing page with a two-column layout: ORBIT branding on the left and Sign Up / Sign In tabs on the right.
+- Added responsive auth preview form with labeled fields and a clear nonfunctional notice; submissions are prevented and no credentials are sent.
+- Preserved /app demo and its existing routes. Real authentication remains planned for Phase 2.
+- Automated and browser verification deferred at the user's request.
+
 # Unreleased — Phase 1E Typed Mock Data
 
 - Added typed user, world, post and notification domain contracts.
